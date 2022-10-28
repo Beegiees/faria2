@@ -1,0 +1,68 @@
+body {
+    overflow: hidden;
+}
+#content {
+    width: 100%;
+    transition: all 0.3s;
+    overflow: auto;
+}
+
+.wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+#tablecontainer {
+    table-layout:fixed;
+}
+
+#tablecontainer tbody td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    height: 30px;
+    vertical-align:middle;
+}
+
+
+#tablecontainer tbody td:nth-child(6) {
+    display:none;
+}
+
+#tablecontainer tbody td:nth-child(7) {
+    display:none;
+}
+
+#tablecontainer tbody tr:hover td {
+    background-color: #e1e1e1;
+    cursor: pointer;
+    overflow : visible;
+    white-space : normal;
+}
+
+.divtablecontainer    { overflow-y: auto; }
+.divtablecontainer th 
+{ 
+    top: 0;
+    box-shadow: 0 0 20px 0 gray;
+}
+
+.divtablecontainer table { border-collapse: collapse; width: 100%; }
+.divtablecontainer th, .divtablecontainer td { padding: 8px 8px; }
+.divtablecontainer th    { background: white; }
+
+
+
+.rowEDIT{
+    margin:5px;
+}
+
+.rowDELETE{
+    margin:5px;
+}
+
+nav
+{
+    box-shadow: 0 0 20px 0 gray;
+    z-index: 100;
+}
