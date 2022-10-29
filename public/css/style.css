@@ -41,7 +41,7 @@ body {
 }
 
 .divtablecontainer    { overflow-y: auto; }
-.divtablecontainer th 
+.divtablecontainer thead
 { 
     top: 0;
     box-shadow: 0 0 20px 0 gray;
