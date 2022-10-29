@@ -53,31 +53,70 @@ $(document).ready(function() {
         if (err){
 			return err;
 		}
-		$('table#tablecontainer tbody tr:nth-child(' + ($("#hdnSEQUENCE").val()) + ') td:nth-child(' + 2 + ')').text($("#edTASK").val());
-		$('table#tablecontainer tbody tr:nth-child(' + ($("#hdnSEQUENCE").val()) + ') td:nth-child(' + 3 + ')').text($("#edDESCRIPTION").val());
-		$('table#tablecontainer tbody tr:nth-child(' + ($("#hdnSEQUENCE").val()) + ') td:nth-child(' + 4 + ')').text($("#edAUTHOR").val());
+		var FLAG = 1;
+		
 		if ($("#rdbedFLAGOPEN").prop("checked")){
-			$('table#tablecontainer tbody tr:nth-child(' + ($("#hdnSEQUENCE").val()) + ') td:nth-child(' + 5+ ')').text("Open");
-			$('table#tablecontainer tbody tr:nth-child(' + ($("#hdnSEQUENCE").val()) + ') td:nth-child(' + 6 + ')').text("1");
+			FLAG = 1;
 		} else {
-			$('table#tablecontainer tbody tr:nth-child(' + ($("#hdnSEQUENCE").val()) + ') td:nth-child(' + 5 + ')').text("Close");
-			$('table#tablecontainer tbody tr:nth-child(' + ($("#hdnSEQUENCE").val()) + ') td:nth-child(' + 6 + ')').text("0");
+			FLAG = 0;
 		}
-		filterTable();
-		TableToCSV();
-        $("#modalEDIT").modal("hide");	
+		$.ajax({
+            type : "POST",
+            url: "/updateTASK",
+			async : false ,
+            context: document.body,
+            data: {
+                    ID : $("#edID").val() ,
+					TASK : $("#edTASK").val() ,
+					DESCRIPTION : $("#edDESCRIPTION").val(),
+					AUTHOR : $("#edAUTHOR").val(),
+					FLAG : FLAG
+				  },
+            success: function(d){
+                alert("Record has been update!");
+				filterTable();
+				$("#modalEDIT").modal("hide");	
+            },
+            error: function(d){
+				alert("Unable to update!");
+                return false;
+            }
+        }).done(function() {
+            
+        });
+	
+       
     });
 	
 	$(document).on('click', 'a.rowDELETE', function(e) {
 		e.preventDefault();
-		$('table#tablecontainer tbody tr:nth-child(' + ($(this).closest('td').parent()[0].sectionRowIndex + 1) + ') td:nth-child(' + 7 + ')').text("1");
-		TableToCSV();
-		filterTable();
+		$.ajax({
+            type : "POST",
+            url: "/deleteTASK",
+			async : false ,
+            context: document.body,
+            data: {
+                    ID : $('table#tablecontainer tbody tr:nth-child(' + ($(this).closest('td').parent()[0].sectionRowIndex + 1) + ') td:nth-child(' + 1 + ')').text() 
+				  },
+            success: function(d){
+                alert("Record has been deleted!");
+				filterTable();
+            },
+            error: function(d){
+				alert("Unable to delete!");
+                return false;
+            }
+        }).done(function() {
+            
+        });
     });
 
 	$("#btnADD").click(function(){
-		$("#addID").val(parseInt($('#tablecontainer tr:last td:nth-child(' + 1 + ')').text()) + 1);
-		$("#addNAME").val("");
+		$.get( "/getNewID", function(data) {
+			$("#addID").val(parseInt(data));
+		});
+		
+		$("#addTASK").val("");
 		$("#addDESCRIPTION").val("");
 		$("#addAUTHOR").val("");
         $("#modalADD").modal({backdrop : 'static', keyboard: false});
@@ -121,68 +160,31 @@ $(document).ready(function() {
 			return err;
 		}
 		
-		var tableRef = document.getElementById('tablecontainer').getElementsByTagName('tbody')[0];
-        var newRow = tableRef.insertRow(tableRef.rows.length);
-		
-		var newCell0 = newRow.insertCell(0);
-        var newText0 = document.createTextNode($("#addID").val());
-        newCell0.appendChild(newText0);
-
-		var newCell1 = newRow.insertCell(1);
-        var newText1 = document.createTextNode($("#addTASK").val());
-        newCell1.appendChild(newText1);
-
-		var newCell2 = newRow.insertCell(2);
-        var newText2 = document.createTextNode($("#addDESCRIPTION").val());
-        newCell2.appendChild(newText2);
-
-		var newCell3 = newRow.insertCell(3);
-        var newText3 = document.createTextNode($("#addAUTHOR").val());
-        newCell3.appendChild(newText3);
-		
-		var newCell4 = newRow.insertCell(4);
-        var newText4 = document.createTextNode("Open");
-        newCell4.appendChild(newText4);
-		
-		var newCell5 = newRow.insertCell(5);
-        var newText5 = document.createTextNode("1");
-        newCell5.appendChild(newText5);
-		
-		var newCell6 = newRow.insertCell(6);
-        var newText6 = document.createTextNode("0");
-        newCell6.appendChild(newText6);
-
-
-		var newCell7 = newRow.insertCell(7);
-
-		var newANCHOR1 = document.createElement('a');
-		newANCHOR1.className = "rowEDIT";
-		newANCHOR1.href = "#";
-		var newICON1 = document.createElement('i');
-		newICON1.className = "fas fa-pencil-alt"
-		var newText1 = document.createTextNode(" Edit");
-		newANCHOR1.appendChild(newICON1);
-		newANCHOR1.appendChild(newText1);
-		
-		var newTextMID = document.createTextNode("  |  ");
-
-		var newANCHOR2 = document.createElement('a');
-		newANCHOR2.className = "rowDELETE";
-		newANCHOR2.href = "#";
-		newANCHOR2.style = "color:red;";
-		var newICON2 = document.createElement('i');
-		newICON2.className = "fas fa-times"
-		var newText2 = document.createTextNode(" Delete");
-		newANCHOR2.appendChild(newICON2);
-		newANCHOR2.appendChild(newText2);
-
-		newCell7.appendChild(newANCHOR1);
-		newCell7.appendChild(newTextMID);
-		newCell7.appendChild(newANCHOR2);
-		
-		filterTable();
-		TableToCSV();
-		$("#modalADD").modal("hide");	
+		$.ajax({
+            type : "POST",
+            url: "/addTASK",
+			async : false ,
+            context: document.body,
+            data: {
+                    ID : $("#addID").val() ,
+					TASK : $("#addTASK").val() ,
+					DESCRIPTION : $("#addDESCRIPTION").val() ,
+					AUTHOR : $("#addAUTHOR").val() ,
+					FLAG : 1
+				  },
+            success: function(d){
+                alert("Record has been saved!");
+				filterTable();
+				$("#modalADD").modal("hide");	
+            },
+            error: function(d){
+				alert("Duplicate ID!");
+                return false;
+            }
+        }).done(function() {
+            
+        });
+	
 	});
 	
 	$("#txtFilter").on('input',function(){
@@ -196,30 +198,47 @@ $(document).ready(function() {
 	});
 	
 	function filterTable(){
-		$('#tablecontainer > tbody  > tr').each(function() {
-			if (jQuery(this).children("td:eq(6)").text() == "1"){
-				$(this).hide();
-			} else {
-				if ($("#selFLAG").val() != 2){
-					if ($("#selFLAG").val() != jQuery(this).children("td:eq(5)").text()){
+		
+		$.ajax({
+            type : "GET",
+            url: "/data",
+			async : false ,
+            context: document.body,
+            success: function(d){
+				createTable(d);
+				$('#tablecontainer > tbody  > tr').each(function() {
+					if (jQuery(this).children("td:eq(6)").text() == "1"){
 						$(this).hide();
 					} else {
-						if (textMatch(this, $("#txtFilter").val())){
-							$(this).show();
+						if ($("#selFLAG").val() != 2){
+							if ($("#selFLAG").val() != jQuery(this).children("td:eq(5)").text()){
+								$(this).hide();
+							} else {
+								if (textMatch(this, $("#txtFilter").val())){
+									$(this).show();
+								} else {
+									$(this).hide();
+								}
+							}	
 						} else {
-							$(this).hide();
+							if (textMatch(this, $("#txtFilter").val())){
+								$(this).show();
+							} else {
+								$(this).hide();
+							}
 						}
-					}	
-				} else {
-					if (textMatch(this, $("#txtFilter").val())){
-						$(this).show();
-					} else {
-						$(this).hide();
 					}
-				}
-			}
-			
-		});
+					
+				});
+            },
+            error: function(d){
+				
+                return false;
+            }
+        }).done(function() {
+            
+        });
+		
 		
 	}
 	
@@ -232,6 +251,52 @@ $(document).ready(function() {
 			return true;
 		} 
 		return match;
+	}
+	
+	function createTable(d){
+		var tableRef = document.getElementById('tablecontainer').getElementsByTagName('tbody')[0];
+		var retOBJ = d.split("\n");
+	  
+		$("#tablecontainer > tbody").html("");
+		var table = "";
+		for (var i=0; i < retOBJ.length - 1; i++){
+			var data = retOBJ[i].split(";");
+			if (data[5] == "0"){
+				table += "<tr>";
+			} else {
+				table += "<tr style = 'display:none;'>";
+			}
+			for (var col = 0; col < data.length; col++){
+				if (col === 4){
+					if (data[col] == 1){
+						table += "<td>";
+						table += "Open";
+						table += "</td>";
+						table += "<td>";
+						table += data[col];
+						table += "</td>";
+					} else {
+						table += "<td>";
+						table += "Close";
+						table += "</td>";
+						table += "<td>";
+						table += data[col];
+						table += "</td>";
+					}
+				} else {
+					table += "<td>";
+					table += data[col];
+					table += "</td>";
+				}
+			}
+			table += "<td>";
+			table += "<a href='#' class = 'rowEDIT'><i class = 'fas fa-pencil-alt'></i> Edit</a> | <a href='#'  style = 'color:red;' class = 'rowDELETE'><i class = 'fas fa-times'></i> Delete</a>";
+			table += "</td>";
+			table += "</tr>";
+			
+		}
+		$("#tablecontainer > tbody").html(table);
+	
 	}
 	
 	function TableToCSV(){
