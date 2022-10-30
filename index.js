@@ -171,8 +171,8 @@ app.get("/getNewID", function (req, res) {
 	}
 });
 
-app.listen(3000, () => {
-	console.log("Application started and Listening on port 3000");
+app.listen(80, () => {
+	console.log("Application started and Listening on port 80");
 });
 
 module.exports = app;
