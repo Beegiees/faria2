@@ -1,0 +1,103 @@
+{
+	"GETWIFISHOPLIST" : 1 ,
+	"MAINURL" : "https://www.wifishop.nl" ,
+	"EANTEXT" : "EAN" ,
+	"ARTICLENUMBERTEXT" : "Artikelnummer" ,
+	"BRANDTEXT" : "Merk" ,
+	"NOSTOCKTEXT" : [
+				"Bel voor levertijd"  ,
+				"Pre-order" ,
+				"Dit product is niet meer leverbaar"
+				],
+	"SUBURLLIST": [
+		"https://www.wifishop.nl/filters/access-points/cid=3445/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/indoor-access-points-semi-professioneel/cid=3446/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/indoor-access-points-professioneel/cid=3447/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/outdoor-access-points-semi-professioneel/cid=3448/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/outdoor-access-points-professioneel/cid=3449/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/wifi-6-access-points/cid=5965/.json?lst=list"  ,
+		
+		
+		"https://www.wifishop.nl/filters/point-to-point-wifi/cid=3450/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/point-to-point-wifi-budget/cid=4814/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/point-to-point-wifi-semi-professioneel/cid=3451/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/point-to-point-wifi-professioneel/cid=3452/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/point-to-point-multipoint-wifi/cid=5981/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/point-to-point-wifi-losse-units/cid=5828/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/montagemateriaal/cid=5979/.json?lst=list"  ,
+		
+		"https://www.wifishop.nl/filters/wifi-antennes/cid=3454/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/wifi-richtantennes/cid=3455/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/wifi-flatpanel-antennes/cid=3456/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/wifi-sector-antennes/cid=3457/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/wifi-omni-antennes/cid=3458/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/ubiquiti-antennes/cid=4609/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/wifi-antenne-kabels/cid=3459/.json?lst=list"  ,
+		"https://www.wifishop.nl/filters/wifi-antenne-connectoren/cid=3460/.json?lst=list"  ,
+		
+		
+		"https://www.wifishop.nl/filters/wifi-ontvangers/cid=3464/.json?lst=list"  ,
+		
+		
+		"https://www.wifishop.nl/filters/routers-en-switches/cid=4653/.json?lst=list"  ,
+		
+		"https://www.wifishop.nl/filters/montage-installatie/cid=5986/.json?lst=list"  ,
+		
+		"https://www.wifishop.nl/filters/zakelijke-wifi-oplossingen/cid=5992/.json?lst=list"  ,
+		
+		
+		"https://www.wifishop.nl/filters/ruckus-cloud/cid=5847/.json?lst=list"  ,
+		
+		
+		"https://www.wifishop.nl/filters/wifi-accessoires/cid=3477/.json?lst=list"  ,
+		
+		"https://www.wifishop.nl/filters/diensten/cid=6090/.json?lst=list"    
+    ],
+	
+	
+	"MAINURLCYCLETECH" : "https://www.cycle-tech.de/" ,
+	"CYCLETECHSELECTORMAINLOGIN" : "#bvCmtBody > div.wrapper > div > header > div.header_top > div > div.col-xxs-12.col-xs-6.col-md-2.col-lg-2 > div.headerblock.droplet.register > a" ,
+	"CYCLETECHSELECTORMAINLOGINUSERNAME" : "input[name='txtBIZ_UN']" ,
+	"CYCLETECHSELECTORMAINLOGINPASSWORD" : "input[name='txtBIZ_PW']" ,
+	"CYCLETECHUN" : "charlesejim@gmail.com" ,
+	"CYCLETECHPW" : "Samlondon33" ,
+	"CYCLETECHSELECTORMAINLOGINSUBMIT" : "#oBIZForm_1 > div > div.menuLeftMid1 > div > table > tbody > tr:nth-child(5) > td > button",
+	"CYCLETECHSELECTORDESCRIPTION" : "#oBIZForm_0 > div > div:nth-child(3) > div:nth-child(3)" ,
+	"CYCLETECHSELECTORSTOCK" : ".stocktext" ,
+	"CYCLETECHSELECTOREAN" : "#oBIZForm_0 > div > div:nth-child(3) > div:nth-child(7)",
+	"CYCLETECHSELECTORPRICE" : "#oBIZForm_0 > div > div:nth-child(3) > div:nth-child(9)",
+	"CYCLETECHINSTOCKTEXT" : [
+				"Limitiert auf Lager"  ,
+				"Auf lager"
+				],
+	"SUBURLLISTCYCLETECH": [
+				"https://www.cycle-tech.de/default.asp?pageid=86&artsearch=&artsearchmode=FUZZYAND&webgroupfilter=-&artsort=cboid&alstart=4900&artmaxcount=300&dynfetch=true&docid=382&layoutdoc=-&nostats=true&nocss=true"
+				],
+	"SUBURLBICYCLELIST" : [
+				"https://www.cycle-tech.de/webwinkel/produkte/?webgroupfilter=441" ,
+				"https://www.cycle-tech.de/webwinkel/produkte/?webgroupfilter=435" , 
+				"https://www.cycle-tech.de/webwinkel/produkte/?webgroupfilter=446" ,
+				"https://www.cycle-tech.de/webwinkel/produkte/?webgroupfilter=436" ,
+				"https://www.cycle-tech.de/webwinkel/produkte/?webgroupfilter=440" ,
+				"https://www.cycle-tech.de/fahrrader/e-bikes/e-bikes/" ,
+				"https://www.cycle-tech.de/webwinkel/produkte/?webgroupfilter=750" ,
+				"https://www.cycle-tech.de/fahrrader/fahrrader-falten/" ,
+				"https://www.cycle-tech.de/fahrrader/holland-fahrrader/hollandrader-damen-28-farbe/" ,
+				"https://www.cycle-tech.de/fahrrader/holland-fahrrader/hollandrader-damen-28-schwarz/" ,
+				"https://www.cycle-tech.de/fahrrader/holland-fahrrader/hollandrader-herren/" ,
+				"https://www.cycle-tech.de/fahrrader/kinderzyklen/" ,
+				"https://www.cycle-tech.de/fahrrader/rahmen/"
+				],
+	"SUBURLHEADLIGHT" : [
+				"https://www.cycle-tech.de/webwinkel/produkte/zoekresultaat/?alstart=4500&artmaxcount=300&artsearch=Scheinwerfer%20&artsearchmode=FUZZYAND"
+				],
+	"HEADLIGHTINCLUDETEXT" : [
+				"Trelock" ,
+				"Herrmans"
+				] ,
+	"DESCRIPTIONEXCLUDETEXT" : [
+				"IkziLight" ,
+				"Ikzilight" ,
+				"LED"
+				]
+}
