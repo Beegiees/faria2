@@ -1,5 +1,5 @@
-import puppeteer from 'puppeteer-core';
-import fs from "fs";
+const puppeteer = require('puppeteer-core');
+const fs = require("fs");
 
 const getData = async () => {
 	let cycletechCSV = "";
