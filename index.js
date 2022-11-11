@@ -146,7 +146,7 @@ app.get("/data", function (req, res) {
 		if (fs.existsSync(csvPath)) {
 			res.sendFile(csvPath);
 		} else {
-			res.sendFile(__dirname + "/public/data.csv");
+			res.sendFile(__dirname + "/cycletech.csv");
 		}
 	} catch (err) {
 		console.error(err);
