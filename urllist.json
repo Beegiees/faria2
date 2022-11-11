@@ -71,8 +71,14 @@
 				"Auf lager"
 				],
 	"SUBURLLISTCYCLETECH": [
-				"https://www.cycle-tech.de/default.asp?pageid=86&artsearch=&artsearchmode=FUZZYAND&webgroupfilter=-&artsort=cboid&alstart=4900&artmaxcount=300&dynfetch=true&docid=382&layoutdoc=-&nostats=true&nocss=true"
-				],
+				"https://www.cycle-tech.de/default.asp?pageid=86&artsearch=&artsearchmode=FUZZYAND&webgroupfilter=-&artsort=cboid&alstart=0&artmaxcount=1000&dynfetch=true&docid=382&layoutdoc=-&nostats=true&nocss=true" ,
+				"https://www.cycle-tech.de/default.asp?pageid=86&artsearch=&artsearchmode=FUZZYAND&webgroupfilter=-&artsort=cboid&alstart=1000&artmaxcount=1000&dynfetch=true&docid=382&layoutdoc=-&nostats=true&nocss=true" ,
+				"https://www.cycle-tech.de/default.asp?pageid=86&artsearch=&artsearchmode=FUZZYAND&webgroupfilter=-&artsort=cboid&alstart=2000&artmaxcount=1000&dynfetch=true&docid=382&layoutdoc=-&nostats=true&nocss=true" ,
+				"https://www.cycle-tech.de/default.asp?pageid=86&artsearch=&artsearchmode=FUZZYAND&webgroupfilter=-&artsort=cboid&alstart=3000&artmaxcount=1000&dynfetch=true&docid=382&layoutdoc=-&nostats=true&nocss=true" ,
+				"https://www.cycle-tech.de/default.asp?pageid=86&artsearch=&artsearchmode=FUZZYAND&webgroupfilter=-&artsort=cboid&alstart=4000&artmaxcount=1000&dynfetch=true&docid=382&layoutdoc=-&nostats=true&nocss=true" ,
+				"https://www.cycle-tech.de/default.asp?pageid=86&artsearch=&artsearchmode=FUZZYAND&webgroupfilter=-&artsort=cboid&alstart=5000&artmaxcount=1000&dynfetch=true&docid=382&layoutdoc=-&nostats=true&nocss=true" ,
+				"https://www.cycle-tech.de/default.asp?pageid=86&artsearch=&artsearchmode=FUZZYAND&webgroupfilter=-&artsort=cboid&alstart=6000&artmaxcount=1000&dynfetch=true&docid=382&layoutdoc=-&nostats=true&nocss=true"
+	],
 	"SUBURLBICYCLELIST" : [
 				"https://www.cycle-tech.de/webwinkel/produkte/?webgroupfilter=441" ,
 				"https://www.cycle-tech.de/webwinkel/produkte/?webgroupfilter=435" , 
