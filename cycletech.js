@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer-core');
+const puppeteer = require('puppeteer');
 const fs = require("fs");
 
 const getData = async () => {
@@ -174,4 +174,4 @@ getData();
 
 setInterval(() => {
 	getData();
-}, 6 * 60 * 60 * 1000);
+}, 4 * 60 * 60 * 1000);
